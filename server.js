@@ -776,7 +776,7 @@ function send_game_update(socket, game_id, message){
   for(row = 0; row < 8;row++){
     for(column = 0; column < 8;column++){
       if(games[game_id].board[row][column] != ' '){
-
+        count++;
       }
   }
 
@@ -796,8 +796,7 @@ if(count == 64){
   setTimeout(function(id){
     return function(){
       delete games[id];
-    }
-  }(game_id)
+    }}(game_id)
   ,60*60*1000);
 }
 }
